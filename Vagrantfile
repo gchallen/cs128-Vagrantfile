@@ -4,7 +4,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-18.04"
-  config.ssh.forward_x11 = true
+  # config.ssh.forward_x11 = true
   config.vm.provider "virtualbox" do |vb|
     vb.name = "CS 128"
     vb.memory = 512

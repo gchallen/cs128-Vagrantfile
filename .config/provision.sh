@@ -18,14 +18,14 @@ apt-get $APT_FLAGS install clang-format-10 clang-tidy-10 cppcheck uncrustify
 update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-10 100
 update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-10 100
 
-apt-get $APT_FLAGS install make cmake git vim nano gedit manpages-dev gdb lldb-10 valgrind graphviz imagemagick gnuplot xorg
+apt-get $APT_FLAGS install make cmake git vim nano gedit manpages-dev gdb lldb-10 valgrind graphviz imagemagick gnuplot # xorg
 
 sudo ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime
 dpkg-reconfigure tzdata 2>&1
 
 ln -sf /vagrant/.config/clang-tidy /home/vagrant/.clang-tidy
 ln -sf /vagrant/.config/clang-format /home/vagrant/.clang-format
-ln -sf /vagrant/.vscode /home/vagrant/.vscode
 
-grep -qxF 'ForwardX11 yes' /etc/ssh/ssh_config || echo '    ForwardX11 yes' >> /etc/ssh/ssh_config
-grep -qxF 'ForwardX11Trusted yes' /etc/ssh/ssh_config || echo '    ForwardX11Trusted yes' >> /etc/ssh/ssh_config
+# ln -sf /vagrant/.vscode /home/vagrant/.vscode
+# grep -qxF 'ForwardX11 yes' /etc/ssh/ssh_config || echo '    ForwardX11 yes' >> /etc/ssh/ssh_config
+# grep -qxF 'ForwardX11Trusted yes' /etc/ssh/ssh_config || echo '    ForwardX11Trusted yes' >> /etc/ssh/ssh_config
